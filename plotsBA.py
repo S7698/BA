@@ -26,14 +26,7 @@ def x_plot(file):
                 x2 = data[f[i + 1], 0] / 1000  # Time of end in ms
                 type = data[f[i] + 1, 10]
                 y1 = -3500
-                y2 = -3000
-
-                #textfile 
-                if type == 2:
-                    with open("numbers2.txt", "a") as abc:
-                        abc.write(str(x1))
-                        abc.write('\n')
-                    abc.close
+                y2 = -3000                
                 
                 ax.add_patch(plt.Rectangle((x1, y1), x2 - x1, y2 - y1, facecolor=pcol[int(type)]))
             
@@ -48,6 +41,3 @@ def x_plot(file):
             
     plt.tight_layout()
     plt.show()
-
-
-x_plot('S05R02.txt')
